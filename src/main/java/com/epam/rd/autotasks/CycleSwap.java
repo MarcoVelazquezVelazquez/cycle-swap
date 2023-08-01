@@ -44,24 +44,24 @@ class CycleSwap {
 
     static void cycleSwap(int[] array, int shift) {
 
-        int arrayLength = array.length;
+        int arrayCopia = array.length;
 
         // Handle edge cases
-        if (shift == 0 || arrayLength == 0) {
+        if (shift == 0 || arrayCopia == 0) {
             return;
         }
 
         // Create a temporary array to store the elements during shifting
-        int[] temp = new int[arrayLength];
+        int[] temp = new int[arrayCopia];
 
         // Perform the cyclic shift
-        for (int i = 0; i < arrayLength; i++) {
-            int newPosition = (i + shift) % arrayLength;
+        for (int i = 0; i < arrayCopia; i++) {
+            int newPosition = (i + shift) % arrayCopia;
             temp[newPosition] = array[i];
         }
 
         // Copy the elements back to the original array
-        System.arraycopy(temp, 0, array, 0, arrayLength);
+        System.arraycopy(temp, 0, array, 0, arrayCopia);
     }
 
 }
